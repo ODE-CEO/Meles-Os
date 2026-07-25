@@ -45,13 +45,4 @@ Geleneksel ağır masaüstü ortamlarının aksine, sistem **PyQt5 + WebEngine (
 
 Meles OS çalışma alanında projeyi sıfırdan derlemek için terminalde sırasıyla aşağıdaki komutları çalıştırın:
 
-```bash
-# 1. Depoyu klonlayın
-git clone [https://github.com/ODE-CEO/Meles-Os.git](https://github.com/ODE-CEO/Meles-Os.git)
-cd Meles-Os
-
-# 2. Meles UI arayüz motorunu hazırlayın
-bash meles_gorunum_insaa.sh
-
-# 3. ISO derleme fırınını ateşleyin (Root hakları gerektirir)
-sudo ./baslat.sh
+## DAHA EKLENMEDİ DAHA GELİŞTİRME AŞAMASINDADIR
