@@ -1,4 +1,4 @@
-# 🚀 Meles OS (Beta Core)
+# 🚀 Meles OS 
 
 <p align="center">
   <img src="https://img.shields.io/badge/Base-Debian_12_Bookworm-red?style=for-the-badge&logo=debian&logoColor=white" />
