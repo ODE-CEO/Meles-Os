@@ -1,0 +1,4 @@
+#!/bin/sh
+if [ -f /usr/share/applications/org.gnome.Terminal.desktop ]; then
+    sed -i 's/^Icon=.*/Icon=\/usr\/share\/icons\/Terminallogo.png/g' /usr/share/applications/org.gnome.Terminal.desktop
+fi

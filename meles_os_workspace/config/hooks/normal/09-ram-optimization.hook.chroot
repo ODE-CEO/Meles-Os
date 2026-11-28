@@ -1,0 +1,14 @@
+#!/bin/sh
+echo "[HOOK] RAM optimizasyonlari devrede (Tracker ve Software servisleri öldürülüyor)..."
+systemctl --global mask tracker-extract-3.service tracker-miner-fs-3.service tracker-writeback-3.service evolution-source-registry.service evolution-calendar-factory.service || true
+mkdir -p /etc/xdg/autostart
+echo -e "[Desktop Entry]\nHidden=true" > /etc/xdg/autostart/gnome-software-service.desktop
+cat > /etc/default/zramswap << 'ZRAM_EOF'
+ALGO=lz4
+PERCENT=25
+PRIORITY=100
+ZRAM_EOF
+cat > /etc/default/earlyoom << 'EARLYOOM_EOF'
+EARLYOOM_ARGS="-r 3600 -m 5 -s 10"
+EARLYOOM_EOF
+systemctl enable zramswap.service earlyoom.service

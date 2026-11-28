@@ -1,0 +1,14 @@
+#!/bin/sh
+echo "[HOOK] Grafiksel yükleme çubuğu için dinamik görseller üretiliyor..."
+apt-get update || true
+apt-get install -y python3-pil || true
+mkdir -p /usr/share/plymouth/themes/meles
+python3 -c "
+from PIL import Image
+# Arka plan kutusu (Yarı saydam koyu gri)
+bg = Image.new('RGBA', (300, 12), (30, 30, 30, 180))
+bg.save('/usr/share/plymouth/themes/meles/progress_box.png')
+# Doldurucu bar (Canlı Meles Mavisi)
+fg = Image.new('RGBA', (300, 12), (0, 191, 255, 255))
+fg.save('/usr/share/plymouth/themes/meles/progress_bar.png')
+"

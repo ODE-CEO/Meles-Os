@@ -1,0 +1,2 @@
+#!/bin/sh
+sed -i 's/^#WaylandEnable=false/WaylandEnable=false/' /etc/gdm3/daemon.conf

@@ -1,0 +1,10 @@
+#!/bin/sh
+echo "[HOOK] Titanium Arayüz Motoru (Dash-to-Panel, ArcMenu & Temalar) Gömülüyor..."
+apt-get update -qq || true
+apt-get install -y gnome-shell-extension-dash-to-panel gnome-shell-extension-arc-menu gnome-shell-extension-appindicator gnome-shell-extension-caffeine gnome-themes-extra yad jq wmctrl xdotool network-manager-gnome dconf-cli unzip wget fonts-inter fonts-jetbrains-mono || true
+
+# Mutter Metacity Siyah Tema Uyumluluk Köprüsü
+mkdir -p /usr/share/themes/Adwaita-dark
+if [ -d /usr/share/themes/Adwaita/metacity-1 ]; then
+    ln -sf /usr/share/themes/Adwaita/metacity-1 /usr/share/themes/Adwaita-dark/metacity-1
+fi

@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "[HOOK-99] Eklentiler kuruldu, GSettings ve DConf veritabanları son kez mühürleniyor..."
+glib-compile-schemas /usr/share/glib-2.0/schemas/ || true
+dconf update || true

@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "[HOOK-06] Flathub resmi deposu sisteme kalıcı olarak tanıtılıyor..."
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo || true

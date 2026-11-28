@@ -1,0 +1,33 @@
+#!/bin/sh
+echo "[HOOK] Matrix'teki tum Debian isimleri Meles OS, hostname ise demo yapiliyor..."
+
+# Hostname ayarı -> meles@demo
+echo "demo" > /etc/hostname
+sed -i 's/debian/demo/g' /etc/hosts 2>/dev/null || true
+if ! grep -q "demo" /etc/hosts; then
+    echo "127.0.1.1 demo" >> /etc/hosts
+fi
+
+if [ -f /etc/os-release ]; then
+    sed -i 's/Debian GNU\/Linux/Meles OS/g' /etc/os-release
+    sed -i 's/Debian/Meles/g' /etc/os-release
+    sed -i 's/debian/meles/g' /etc/os-release
+    cp /etc/os-release /usr/lib/os-release 2>/dev/null || true
+fi
+
+if [ -f /etc/default/grub ]; then
+    sed -i 's/GRUB_DISTRIBUTOR=.*/GRUB_DISTRIBUTOR="Meles OS"/g' /etc/default/grub
+    echo 'GRUB_BACKGROUND="/usr/share/plymouth/themes/meles/meleslogo.png"' >> /etc/default/grub
+fi
+
+rm -f /usr/share/images/desktop-base/desktop-grub.png 2>/dev/null || true
+rm -f /usr/share/desktop-base/active-theme/login/background 2>/dev/null || true
+rm -f /usr/share/desktop-base/active-theme/grub/grub-4x3.png 2>/dev/null || true
+rm -f /usr/share/desktop-base/active-theme/grub/grub-16x9.png 2>/dev/null || true
+find /usr/share/desktop-base -name "*debian*" -delete 2>/dev/null || true
+find /usr/share/icons -name "*debian-swirl*" -delete 2>/dev/null || true
+
+mkdir -p /usr/share/images/desktop-base/
+cp /usr/share/icons/meleslogo.png /usr/share/images/desktop-base/desktop-grub.png 2>/dev/null || true
+
+rm -f /usr/share/applications/debian-installer-launcher.desktop 2>/dev/null || true

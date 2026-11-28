@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
+echo "needs_root_rights=yes" >> /etc/X11/Xwrapper.config
+systemctl enable meles-kiosk.service
