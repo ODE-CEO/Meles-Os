@@ -1,3 +1,0 @@
-#!/bin/sh
-plymouth-set-default-theme meles
-update-initramfs -u -k all || true

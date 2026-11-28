@@ -1,4 +1,0 @@
-#!/bin/sh
-echo "[HOOK] 32-bit (i386) mimarisi aktif ediliyor..."
-dpkg --add-architecture i386
-apt-get update || true

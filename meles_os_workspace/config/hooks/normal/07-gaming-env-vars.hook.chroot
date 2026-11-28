@@ -1,3 +1,0 @@
-#!/bin/sh
-echo "export MESA_GL_THREAD=true" >> /etc/environment
-echo "export RADV_PERFTEST=aco" >> /etc/environment

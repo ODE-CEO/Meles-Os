@@ -1,4 +1,0 @@
-#!/bin/sh
-apt-get update -qq || true
-apt-get install -y fonts-dejavu-core plymouth-label || true
-mkdir -p /usr/share/plymouth/themes/meles
